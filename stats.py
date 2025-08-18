@@ -20,3 +20,14 @@ def count_letters(filepath):
         else:
             letters[letter] = letters[letter] + 1
     return letters
+
+def sort_to_tide(dict):
+    main_list = []
+    for key in dict:
+        main_list.append({"char": key, "num": dict[key]})
+    
+    def sort_on(item):
+        return item["num"]
+    
+    main_list.sort(reverse=True, key=sort_on)
+    return main_list
